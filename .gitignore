@@ -1,0 +1,20 @@
+# Python virtual environment and caches
+backend/.venv/
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/*.egg-info/
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/.ruff_cache/
+
+# Node dependencies and build folders
+frontend/node_modules/
+frontend/.next/
+frontend/dist/
+
+# Local configuration
+.env
+.env.local
+.env.*.local
+*.log

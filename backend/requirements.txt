@@ -1,0 +1,11 @@
+# GitHub AI Engineer — Python dependencies (3.12+)
+fastmcp>=2.0,<3
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+pydantic>=2.10.0
+pydantic-settings>=2.6.0
+openai>=1.58.0
+anthropic>=0.40.0
+httpx>=0.28.0
+python-dotenv>=1.0.1
+sse-starlette>=2.1.0

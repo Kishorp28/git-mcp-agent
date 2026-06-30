@@ -1,0 +1,32 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ${FILESYSTEM_ALLOWED_PATH:-.}:/workspace:ro
+      - ${GIT_REPOSITORY_PATH:-.}:/repo
+    environment:
+      FILESYSTEM_ALLOWED_PATH: /workspace
+      GIT_REPOSITORY_PATH: /repo
+    # GitHub MCP spawns its own Docker container; mount Docker socket
+    volumes_from: []
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    environment:
+      NEXT_PUBLIC_API_URL: http://backend:8000
