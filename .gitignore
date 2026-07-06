@@ -1,20 +1,47 @@
-# Python virtual environment and caches
+# ─── Python ──────────────────────────────────────────────────────────────────
 backend/.venv/
 backend/venv/
-backend/__pycache__/
-backend/*.pyc
-backend/*.egg-info/
-backend/.pytest_cache/
-backend/.mypy_cache/
-backend/.ruff_cache/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
 
-# Node dependencies and build folders
+# ─── Node / Next.js ──────────────────────────────────────────────────────────
 frontend/node_modules/
 frontend/.next/
 frontend/dist/
+frontend/out/
+*.tsbuildinfo
 
-# Local configuration
+# ─── Secrets & local config — NEVER commit these ─────────────────────────────
 .env
 .env.local
 .env.*.local
+*.pem
+*.key
+secrets/
+
+# ─── Editor & OS ─────────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
 *.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ─── Docker ──────────────────────────────────────────────────────────────────
+docker-compose.override.yml

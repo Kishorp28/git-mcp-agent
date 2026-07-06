@@ -103,7 +103,7 @@ Every tool parameter set is a JSON Schema. The LLM uses this to know *what* argu
 | `agent.py` | LLM ↔ MCP tool loop (ReAct pattern) |
 | `mcp_client.py` | Multi-server MCP connection manager |
 | `config/settings.py` | Environment-based configuration |
-| `services/llm.py` | OpenAI + Anthropic tool-calling adapter |
+| `services/llm.py` | Ollama tool-calling adapter |
 | `prompts/system.py` | System prompt for the coding assistant |
 
 ### Frontend
@@ -125,7 +125,7 @@ Every tool parameter set is a JSON Schema. The LLM uses this to know *what* argu
 - Node.js 20+
 - Docker (for GitHub MCP server)
 - [uv](https://docs.astral.sh/uv/) (for Git MCP via `uvx`)
-- OpenAI or Anthropic API key
+- Running local Ollama instance with a compatible model (e.g. qwen2.5)
 - GitHub Personal Access Token
 
 ### Setup
@@ -191,4 +191,4 @@ In **Step 2** we will:
 | 0 MCP tools | Ensure Docker is running; check GitHub token |
 | Filesystem server fails | Verify `FILESYSTEM_ALLOWED_PATH` is absolute |
 | Git server fails | Install uv: `pip install uv` or use official installer |
-| LLM not configured | Set `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` |
+| LLM not configured | Ensure Ollama is running and `OLLAMA_MODEL` is set |

@@ -1,11 +1,24 @@
 # GitHub AI Engineer — Python dependencies (3.12+)
+# Pin minor versions for reproducibility; allow patch updates.
+
+# --- MCP ---
 fastmcp>=2.0,<3
-fastapi>=0.115.0
-uvicorn[standard]>=0.32.0
-pydantic>=2.10.0
-pydantic-settings>=2.6.0
-openai>=1.58.0
-anthropic>=0.40.0
-httpx>=0.28.0
-python-dotenv>=1.0.1
-sse-starlette>=2.1.0
+
+# --- Web framework ---
+fastapi>=0.115.0,<1
+uvicorn[standard]>=0.32.0,<1
+sse-starlette>=2.1.0,<3
+
+# --- Data validation ---
+pydantic>=2.10.0,<3
+pydantic-settings>=2.6.0,<3
+
+# --- LLM providers ---
+# openai is used as the client library for Ollama's OpenAI-compatible API
+openai>=1.58.0,<2
+
+# --- HTTP client (used by openai/anthropic SDKs) ---
+httpx>=0.28.0,<1
+
+# --- Environment ---
+python-dotenv>=1.0.1,<2
